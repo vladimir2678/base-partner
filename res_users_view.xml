@@ -1,0 +1,66 @@
+<openerp>
+  <data>
+        <record id="view_users_form" model="ir.ui.view">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <label for="name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <field name="name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="name" position="after">
+                    <field name="first_name"
+                           placeholder="First Name"
+                           style="width: 40%%"
+                           class="oe_edit_only"/>
+                    <field name="middle_name"
+                           placeholder="Second Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                    <field name="last_name"
+                           placeholder="Last Name"
+                           style="width: 40%%"
+                           class="oe_edit_only"/>
+                    <field name="second_last_name"
+                           placeholder="Second Last Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                </field>
+          </field>
+        </record>
+        <record id="view_users_simple_form" model="ir.ui.view">
+            <field name="name">res.users.simplified.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
+            <field name="arch" type="xml">
+                <label for="name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <field name="name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="name" position="after">
+                    <field name="first_name"
+                           placeholder="First Name"
+                           style="width: 40%%"
+                           class="oe_edit_only"/>
+                    <field name="middle_name"
+                           placeholder="Second Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                    <field name="last_name"
+                           placeholder="Last Name"
+                           style="width: 40%%"
+                           class="oe_edit_only"/>
+                    <field name="second_last_name"
+                           placeholder="Second Last Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                </field>
+          </field>
+        </record>
+    </data>
+</openerp>

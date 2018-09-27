@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                
+                <field name="name" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}</attribute>
+                </field>        
+                <field name="category_id" position="after">
+                    <field name="first_name"
+                           placeholder="First Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"
+                           attrs="{'required': [('is_company', '=', False)], 'invisible': [('is_company', '=', True)]}"/>
+                    <field name="middle_name"
+                           placeholder="Second Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"
+                           attrs="{'invisible': [('is_company', '=', True)]}"/>
+                    <field name="last_name"
+                           placeholder="Last Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"
+                           attrs="{'required': [('is_company', '=', False)], 'invisible': [('is_company', '=', True)]}"/>
+                    <field name="second_last_name"
+                           placeholder="Second Last Name"
+                           style="width: 39%%"
+                           class="oe_edit_only" 
+                           attrs="{'invisible': [('is_company', '=', True)]}"/>
+                </field>
+                <xpath expr="//field[@name='child_ids']//form//label[@for='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>                
+                <xpath expr="//field[@name='child_ids']//form//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>                
+                <xpath expr="//field[@name='child_ids']//form//field[@name='category_id']" position="after">
+                    <field name="first_name"
+                           placeholder="First Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"/>
+                    <field name="middle_name"
+                           placeholder="Second Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                    <field name="last_name"
+                           placeholder="Last Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"/>
+                    <field name="second_last_name"
+                           placeholder="Second Last Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"/>
+                </xpath>                
+            </field>
+        </record>
+        
+        <record id="view_partner_simple_form" model="ir.ui.view">
+            <field name="name">res.partner.simplified.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_company', '=', False)], 'required': [('is_company', '=', True)], 'default_focus': [('is_company', '=', True)]}</attribute>
+                </field>        
+                <field name="parent_id" position="after">
+                    <field name="first_name"
+                           placeholder="First Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"
+                           attrs="{'required': [('is_company', '=', False)], 'invisible': [('is_company', '=', True)]}"/>
+                    <field name="middle_name"
+                           placeholder="Second Name"
+                           style="width: 39%%"
+                           class="oe_edit_only"
+                           attrs="{'invisible': [('is_company', '=', True)]}"/>
+                    <field name="last_name"
+                           placeholder="Last Name"
+                           style="width: 60%%"
+                           class="oe_edit_only"
+                           attrs="{'required': [('is_company', '=', False)], 'invisible': [('is_company', '=', True)]}"/>
+                    <field name="second_last_name"
+                           placeholder="Second Last Name"
+                           style="width: 39%%"
+                           class="oe_edit_only" 
+                           attrs="{'invisible': [('is_company', '=', True)]}"/>
+                </field>
+            </field>
+        </record>        
+    </data>
+</openerp>
